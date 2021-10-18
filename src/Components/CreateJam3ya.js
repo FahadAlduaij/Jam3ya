@@ -1,28 +1,34 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
+import jam3yaStore from "../Stores/Jam3yaStore";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function CreateJam3ya() {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	const [startDate, setStartDate] = useState(new Date());
+	const [endDate, setEndDate] = useState(new Date());
+
 	const [data, setData] = useState({
-		username: "",
-		email: "",
-		password: "",
+		title: "",
+		image: "",
+		amount: 0,
+		limit: 0,
+		startDate: "",
+		endDate: "",
 	});
 
 	const handleChange = (event) => {
 		setData({ ...data, [event.target.name]: event.target.value });
 	};
 
-	const handleSignUp = (event) => {
+	const handleCreate = (event) => {
 		event.preventDefault();
-	};
-
-	const handleSignIn = (event) => {
-		event.preventDefault();
+		jam3yaStore.createJam3ya(data);
 	};
 
 	return (
@@ -46,49 +52,83 @@ function CreateJam3ya() {
 				</Modal.Header>
 				<Modal.Body>
 					<div className="form-group m-2">
-						<label for="exampleInputEmail1">Username</label>
+						<label for="exampleInputEmail1">Title </label>
 						<input
 							onChange={handleChange}
-							name="username"
+							name="title "
 							type="text"
 							className="form-control "
 							id="exampleInputEmail1"
-							placeholder="Enter Your Username"
+							placeholder="Enter The Title"
 						/>
 					</div>
 					<div className="form-group m-2">
-						<label for="exampleInputEmail1">Email address</label>
+						<label for="exampleInputEmail1">Image </label>
 						<input
 							onChange={handleChange}
-							name="email"
+							name="image "
 							type="email"
 							className="form-control"
 							id="exampleInputEmail1"
 							aria-describedby="emailHelp"
-							placeholder="Enter Your email"
+							placeholder="Enter Image URL"
 						/>
-						<small id="emailHelp" className="form-text text-muted">
-							We'll never share your email with anyone else.
-						</small>
 					</div>
 					<div className="form-group m-2">
-						<label for="exampleInputPassword1">Password</label>
+						<label for="exampleInputPassword1">Amount </label>
 						<input
 							onChange={handleChange}
-							name="password"
-							type="password"
+							name="amount"
+							type="number"
 							className="form-control"
 							id="exampleInputPassword1"
-							placeholder="Password"
+							placeholder="Enter Amount"
 						/>
+					</div>
+					<div className="form-group m-2">
+						<label for="exampleInputPassword1">Limit </label>
+						<input
+							onChange={handleChange}
+							name="limit"
+							type="number"
+							className="form-control"
+							id="exampleInputPassword1"
+							placeholder="Enter Limit"
+						/>
+					</div>
+					<div className="form-group m-2">
+						<label for="exampleInputPassword1">StartDate </label>
+						<DatePicker
+							selected={startDate}
+							name="startDate"
+							onChange={(date) => setStartDate(date)}
+						/>
+						{/* <input
+							onChange={handleChange}
+							name="startDate"
+							className="form-control"
+							id="exampleInputPassword1"
+							placeholder="Enter Limit"
+						/> */}
+					</div>
+					<div className="form-group m-2">
+						<label for="exampleInputPassword1">EndDate </label>
+						<DatePicker
+							name="endDate"
+							selected={endDate}
+							onChange={(date) => setEndDate(date)}
+						/>
+						{/* <input
+							onChange={handleChange}
+							name="endDate"
+							className="form-control"
+							id="exampleInputPassword1"
+							placeholder="Enter Limit"
+						/> */}
 					</div>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button
-						type="submit"
-						className="btn btn-primary"
-						onClick={handleSignIn}
-					>
+					<Button className="btn btn-primary" onClick={handleCreate}>
 						Create
 					</Button>
 				</Modal.Footer>

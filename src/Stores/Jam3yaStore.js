@@ -1,10 +1,10 @@
-import { action, makeAutoObservable, makeObservable, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import api from "../Api/api";
 
 class Jam3yaStore {
 	jam3yat = [];
 	constructor() {
-		makeAutoObservable(this);
+		makeAutoObservable(this, {});
 	}
 
 	fetchJam3ya = async () => {
@@ -15,11 +15,11 @@ class Jam3yaStore {
 			console.log(error);
 		}
 	};
-	createJam3ya = async (jam3ya) => {
+	createJam3ya = async (jam3yaData) => {
 		try {
-			const response = await api.post("/jam3ya", jam3ya);
-
+			const response = await api.post("/jam3ya", jam3yaData);
 			this.jam3yat.push(response.data);
+			console.log(response.data);
 		} catch (error) {
 			console.log(error);
 		}
