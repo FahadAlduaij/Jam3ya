@@ -1,6 +1,5 @@
 import React from "react";
-
-import UserSign from "./UserSign";
+import BtnSign from "./BtnSign";
 
 function Header() {
 	return (
@@ -33,7 +32,7 @@ function Header() {
 					</li>
 				</ul>
 
-				<UserSign />
+				<BtnSign />
 			</nav>
 		</div>
 	);

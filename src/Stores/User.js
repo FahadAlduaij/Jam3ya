@@ -1,33 +1,64 @@
-import axios from "axios";
-import { makeObservable, observable } from "mobx";
-import jwtDecode from "jwt-decode";
+import { action, makeObservable, observable } from "mobx";
+import decode from "jwt-decode";
 import api from "../Api/api";
 
 class UserData {
+	user = null;
 	constructor() {
 		makeObservable(this, {
 			user: observable,
+			signUp: action,
+			signIn: action,
+			logOut: action,
 		});
 	}
-
-	user = null;
 
 	setUser = (token) => {
 		localStorage.setItem("myToken", token);
 		api.defaults.headers.common.Authorization = `Bearer ${token}`;
-		this.user = jwtDecode(token);
+		this.user = decode(token);
 	};
 
-	signUp = async (userData) => {
+	signUp = async (userDataName) => {
 		try {
-			const response = await api.post("/signup", userData);
-            console.log(response.data)
+			const response = await api.post("/signup", userDataName);
+			this.setUser(response.data.token);
 		} catch (error) {
 			console.log(error);
+		}
+	};
+
+	signIn = async (userDataName) => {
+		try {
+			const response = await api.post("/signin", userDataName);
+			this.setUser(response.data.token);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	logOut = () => {
+		delete api.defaults.headers.common.Authorization;
+		localStorage.removeItem("myToken");
+		this.user = null;
+	};
+
+	checkForToken = () => {
+		const token = localStorage.getItem("myToken");
+
+		if (token) {
+			let currentTime = Date.now();
+			let tempUser = decode(token);
+
+			if (tempUser.exp >= currentTime) {
+				this.setUser(token);
+			} else {
+				this.logOut();
+			}
 		}
 	};
 }
 
 const userData = new UserData();
-this.signUp()
+
 export default userData;
