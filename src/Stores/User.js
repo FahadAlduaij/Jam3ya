@@ -45,13 +45,11 @@ class UserData {
 
 	checkForToken = () => {
 		const token = localStorage.getItem("myToken");
-
 		if (token) {
-			let currentTime = Date.now();
+			const currentTime = Date.now();
 			let tempUser = decode(token);
-
 			if (tempUser.exp >= currentTime) {
-				this.setUser(token);
+				this.user = decode(token);
 			} else {
 				this.logOut();
 			}
@@ -60,5 +58,5 @@ class UserData {
 }
 
 const userData = new UserData();
-
+userData.checkForToken();
 export default userData;

@@ -1,9 +1,8 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useState } from "react";
-import userData from "../Stores/User";
 
-function BtnSign() {
+function CreateJam3ya() {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
@@ -19,39 +18,18 @@ function BtnSign() {
 	};
 
 	const handleSignUp = (event) => {
-		try {
-			event.preventDefault();
-			userData.signUp(data);
-			handleClose();
-		} catch (error) {
-			window.alert(error);
-		}
+		event.preventDefault();
 	};
 
 	const handleSignIn = (event) => {
 		event.preventDefault();
-		userData.signIn(data);
-		handleClose();
-	};
-
-	const handleLogout = () => {
-		userData.logOut();
 	};
 
 	return (
 		<>
-			{userData.user ? (
-				<div className="welcome-text">
-					<p>Hello {userData.user.username}</p>
-					<Button variant="primary" onClick={handleLogout}>
-						LogOut
-					</Button>
-				</div>
-			) : (
-				<Button variant="primary" onClick={handleShow}>
-					Sign In
-				</Button>
-			)}
+			<Button variant="primary" onClick={handleShow}>
+				Create New Jam3ya
+			</Button>
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header>
@@ -61,7 +39,7 @@ function BtnSign() {
 						height="50"
 						alt=""
 					/>
-					<Modal.Title>LOGIN</Modal.Title>
+					<Modal.Title>Create Jam3ya</Modal.Title>
 					<Button variant="danger" onClick={handleClose}>
 						Close
 					</Button>
@@ -106,15 +84,12 @@ function BtnSign() {
 					</div>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="secondary" onClick={handleSignUp}>
-						Sign Up
-					</Button>
 					<Button
 						type="submit"
 						className="btn btn-primary"
 						onClick={handleSignIn}
 					>
-						Sign In
+						Create
 					</Button>
 				</Modal.Footer>
 			</Modal>
@@ -122,4 +97,4 @@ function BtnSign() {
 	);
 }
 
-export default BtnSign;
+export default CreateJam3ya;
