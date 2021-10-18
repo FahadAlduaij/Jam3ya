@@ -1,10 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Header from "./Components/Header";
 
 function App() {
 	return (
-		<div className="App">
-			<button className="btn btn-danger">Test</button>
+		<div>
+			<Header />
+			<div className="w-100 h-100 d-inline-block p-3">
+				<h1 className="header-text ">How To Get Money With 6 or More Months.</h1>
+			</div>
 		</div>
 	);
 }
