@@ -1,5 +1,7 @@
 import React from "react";
 
+import UserSign from "./UserSign";
+
 function Header() {
 	return (
 		<div className="header">
@@ -30,7 +32,8 @@ function Header() {
 						</a>
 					</li>
 				</ul>
-				<button className="btn btn-primary nav-item">SignIn/SignUp</button>
+
+				<UserSign />
 			</nav>
 		</div>
 	);
