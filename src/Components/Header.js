@@ -4,7 +4,7 @@ function Header() {
 	return (
 		<div className="header">
 			<nav className="navbar navbar-expand-lg navbar-dark bg-dark p-2">
-				<a class="navbar-brand" href="#">
+				<a className="navbar-brand" href="#">
 					<img
 						src="https://cdn-icons-png.flaticon.com/512/3135/3135679.png"
 						width="50"
@@ -13,19 +13,19 @@ function Header() {
 					/>
 				</a>
 
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">
-							Home <span class="sr-only"></span>
+				<ul className="navbar-nav">
+					<li className="nav-item active">
+						<a className="nav-link" href="#">
+							Home <span className="sr-only"></span>
 						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
+					<li className="nav-item">
+						<a className="nav-link" href="#">
 							Features
 						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
+					<li className="nav-item">
+						<a className="nav-link" href="#">
 							Pricing
 						</a>
 					</li>
