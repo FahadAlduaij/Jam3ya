@@ -3,7 +3,6 @@ import decode from "jwt-decode";
 import api from "../Api/api";
 
 class UserData {
-	user = null;
 	constructor() {
 		makeObservable(this, {
 			user: observable,
@@ -13,6 +12,7 @@ class UserData {
 		});
 	}
 
+	user = null;
 	setUser = (token) => {
 		localStorage.setItem("myToken", token);
 		api.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -48,6 +48,7 @@ class UserData {
 		if (token) {
 			const currentTime = Date.now();
 			let tempUser = decode(token);
+			console.log(tempUser);
 			if (tempUser.exp >= currentTime) {
 				this.user = decode(token);
 			} else {
