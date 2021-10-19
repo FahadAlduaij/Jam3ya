@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import Moment from "react-moment";
+import jam3yaStore from "../Stores/Jam3yaStore";
+import userData from "../Stores/User";
 
 function Jam3yaDetail(props) {
 	const [show, setShow] = useState(false);
@@ -15,12 +17,33 @@ function Jam3yaDetail(props) {
 		.map((user) => user.username)
 		.join(" - ");
 
+	const [joined, setJoined] = useState("Join");
+	const [joinedStatus, setjoinedStatus] = useState(false);
+	const [color, setColor] = useState("primary");
+
+	
+	const changeJoin = () => {
+		if (jam3yaStore.joined === false) {
+			setjoinedStatus(false);
+			setColor("danger");
+			setJoined(`Sorry, You Can't Join This Jam3ya`);
+		} else {
+			setjoinedStatus(true);
+			setColor("success");
+			setJoined(
+				`Welcome ${userData.user.username.toUpperCase()}, You Are a Member Now`
+			);
+		}
+	};
+
 	return (
 		<>
 			<Button
 				className="detail-btn"
 				variant="outline-secondary"
-				onClick={() => setShow(true)}
+				onClick={(e) => {
+					setShow(true);
+				}}
 			>
 				Details
 			</Button>
@@ -87,20 +110,31 @@ function Jam3yaDetail(props) {
 					</p>
 				</Modal.Body>
 
-				<Modal.Footer className="footer-users">
-					<center>
-						<div>
-							<h5>
-								<strong>Users: </strong>
-							</h5>
-						</div>
-					</center>
-				</Modal.Footer>
+				<center>
+					<div>
+						<h5>
+							<strong>Users: </strong>
+						</h5>
+					</div>
+				</center>
 
 				<Modal.Footer className="footer-users">
 					<div>
 						<p>{jam3yaUsers} </p>
 					</div>
+				</Modal.Footer>
+				<Modal.Footer className="footer-users">
+					<Button
+						className="detail-btn"
+						active
+						variant={color}
+						onClick={() => {
+							jam3yaStore.joinJam3ya(props.jam3ya._id);
+							changeJoin();
+						}}
+					>
+						{joined}
+					</Button>
 				</Modal.Footer>
 			</Modal>
 		</>

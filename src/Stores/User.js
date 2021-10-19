@@ -50,7 +50,7 @@ class UserData {
 			let tempUser = decode(token);
 			console.log(tempUser);
 			if (tempUser.exp >= currentTime) {
-				this.user = decode(token);
+				this.setUser(token);
 			} else {
 				this.logOut();
 			}
