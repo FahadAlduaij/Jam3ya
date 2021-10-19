@@ -84,7 +84,12 @@ function BtnSign() {
 						height="50"
 						alt=""
 					/>
-					<Modal.Title>LOGIN</Modal.Title>
+					{sigingUp === false ? (
+						<Modal.Title>LOGIN</Modal.Title>
+					) : (
+						<Modal.Title>SIGNUP</Modal.Title>
+					)}
+
 					<Button variant="danger" onClick={handleClose}>
 						Close
 					</Button>
