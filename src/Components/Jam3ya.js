@@ -3,6 +3,7 @@ import Moment from "react-moment";
 import { observer } from "mobx-react";
 import { Card } from "react-bootstrap";
 import Jam3yaDetail from "./Jam3yaDetail";
+import { Link } from "react-router-dom";
 
 function Jam3ya(props) {
 	// const jam3yaSlug = usePrams().jam3yaSlug
@@ -19,15 +20,18 @@ function Jam3ya(props) {
 				/>
 				<Card.Body>
 					<Card.Title>
-						<strong>Title: </strong>
-						{props.jam3ya.title}
+						<center>
+							<strong>Title: </strong>
+							{props.jam3ya.title}
+						</center>
 					</Card.Title>
+					<br />
 
 					<Card.Text>
 						<strong>Amount: </strong> {props.jam3ya.amount} KD
 					</Card.Text>
 					<Card.Text>
-						<strong>Limit: </strong> {props.jam3ya.limit} 
+						<strong>Limit: </strong> {props.jam3ya.limit}
 					</Card.Text>
 
 					<Card.Text>
@@ -41,9 +45,8 @@ function Jam3ya(props) {
 					</Card.Text>
 
 					<br />
-					<Card.Body>
-						<Jam3yaDetail jam3ya={props.jam3ya} />
-					</Card.Body>
+
+					<Jam3yaDetail jam3ya={props.jam3ya} />
 				</Card.Body>
 			</Card>
 		</div>

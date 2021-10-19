@@ -16,6 +16,13 @@ function Jam3yaList() {
 						<Button variant="secondary">Search</Button>
 						<FormControl aria-label="Default" placeholder="Enter Title" />
 					</InputGroup>
+					<select className=' '>
+						<option>All</option>
+						<option>10</option>
+						<option>20</option>
+						<option>50</option>
+						<option>100</option>
+					</select>
 				</div>
 				<br />
 				<CreateJam3ya />

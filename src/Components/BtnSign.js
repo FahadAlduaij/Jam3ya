@@ -71,11 +71,18 @@ function BtnSign() {
 				</div>
 			) : (
 				<div className=" welcome-text">
-					<Button variant="success" as="button" onClick={handleShow}>
+					<Button variant="outline-light" as="button" onClick={handleShow}>
 						Sign In
 					</Button>
 
-					<Button variant="secondary" as="button" onClick={handleShow}>
+					<Button
+						variant="outline-light"
+						as="button"
+						onClick={() => {
+							setShow(true);
+							setsigingUp(true);
+						}}
+					>
 						Sign Up
 					</Button>
 				</div>
@@ -95,7 +102,7 @@ function BtnSign() {
 						<Modal.Title>SIGNUP</Modal.Title>
 					)}
 
-					<Button variant="danger" onClick={handleClose}>
+					<Button variant="outline-danger" onClick={handleClose}>
 						Close
 					</Button>
 				</Modal.Header>
@@ -167,16 +174,21 @@ function BtnSign() {
 
 				{sigingUp === false ? (
 					<Modal.Footer onSubmit={handleSignIn}>
-						<Button variant="secondary" onClick={openSignUp}>
+						<Button variant="outline-secondary" onClick={openSignUp}>
 							Create New Account
 						</Button>
-						<Button type="submit" variant="success" onClick={handleSignIn}>
+						<Button
+						
+							type="submit"
+							variant="outline-success"
+							onClick={handleSignIn}
+						>
 							Log In
 						</Button>
 					</Modal.Footer>
 				) : (
 					<Modal.Footer>
-						<Button variant="secondary" onClick={handleSignUp}>
+						<Button variant="outline-success" onClick={handleSignUp}>
 							Sign Up
 						</Button>
 					</Modal.Footer>

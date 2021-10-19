@@ -11,14 +11,17 @@ function Jam3yaDetail(props) {
 	const startDateJam3ya = new Date(props.jam3ya.startDate);
 	const endDateJam3ya = new Date(props.jam3ya.endDate);
 
-	const jam3yaUsers = props.jam3ya.users.map((user) => user.username);
-
-	// const authors = props.jam3ya.author.find((jam3ya) => jam3ya.id === jam3ya.author);
-	// console.log(authors)
+	const jam3yaUsers = props.jam3ya.users
+		.map((user) => user.username)
+		.join(" - ");
 
 	return (
 		<>
-			<Button variant="dark" onClick={() => setShow(true)}>
+			<Button
+				className="detail-btn"
+				variant="outline-secondary"
+				onClick={() => setShow(true)}
+			>
 				Details
 			</Button>
 
@@ -39,11 +42,10 @@ function Jam3yaDetail(props) {
 						Jam3ya Details
 					</Modal.Title>
 
-					<Button variant="danger" onClick={handleClose}>
+					<Button variant="outline-danger" onClick={handleClose}>
 						Close
 					</Button>
 				</Modal.Header>
-
 
 				<Modal.Body>
 					<center>
@@ -54,27 +56,26 @@ function Jam3yaDetail(props) {
 							</p>
 						</div>
 					</center>
-
 				</Modal.Body>
 				<Modal.Body>
-                    <center>
-					<div className="container">
-						<img className="image-fit" src={props.jam3ya.image} />
-					</div>
-					<h5>
-						<strong>Title: </strong>
-						{props.jam3ya.title}
-					</h5>
-					<br />
-                         </center>
+					<center>
+						<div className="container">
+							<img className="image-fit" src={props.jam3ya.image} />
+						</div>
+						<h5>
+							<strong>Title: </strong>
+							{props.jam3ya.title}
+						</h5>
+						<br />
+					</center>
 					<p>
 						<strong>Monthly Payment: </strong>
 						{props.jam3ya.amount} KD
 					</p>
-					
+
 					<p>
 						<strong>Limit User's: </strong>
-						{props.jam3ya.limit} 
+						{props.jam3ya.limit}
 					</p>
 					<p>
 						<strong>Start Date: </strong>
@@ -86,7 +87,7 @@ function Jam3yaDetail(props) {
 					</p>
 				</Modal.Body>
 
-				<Modal.Footer className='footer-users'>
+				<Modal.Footer className="footer-users">
 					<center>
 						<div>
 							<h5>
@@ -96,9 +97,9 @@ function Jam3yaDetail(props) {
 					</center>
 				</Modal.Footer>
 
-				<Modal.Footer className='footer-users'>
+				<Modal.Footer className="footer-users">
 					<div>
-						<p>{jam3yaUsers},</p>
+						<p>{jam3yaUsers} </p>
 					</div>
 				</Modal.Footer>
 			</Modal>

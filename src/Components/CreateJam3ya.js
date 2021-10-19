@@ -30,7 +30,7 @@ function CreateJam3ya() {
 
 	return (
 		<>
-			<Button variant="success" size="lg" onClick={handleShow}>
+			<Button className='btn-create-jam3ya' variant="light" size="lg" onClick={handleShow}>
 				Create New Jam3ya
 			</Button>
 
@@ -43,7 +43,7 @@ function CreateJam3ya() {
 						alt=""
 					/>
 					<Modal.Title>Create New Jam3ya</Modal.Title>
-					<Button variant="danger" onClick={handleClose}>
+					<Button variant="outline-danger" onClick={handleClose}>
 						Close
 					</Button>
 				</Modal.Header>
@@ -116,7 +116,7 @@ function CreateJam3ya() {
 					</div>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="success" onClick={handleCreate}>
+					<Button variant="outline-success" onClick={handleCreate}>
 						Create
 					</Button>
 				</Modal.Footer>
