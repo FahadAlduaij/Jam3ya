@@ -5,8 +5,12 @@ import userData from "../Stores/User";
 import { Link } from "react-router-dom";
 
 function BtnSign() {
+	const [sigingUp, setsigingUp] = useState(false);
 	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
+	const handleClose = () => {
+		setShow(false);
+		setsigingUp(false);
+	};
 	const handleShow = () => setShow(true);
 
 	const [data, setData] = useState({
@@ -24,6 +28,15 @@ function BtnSign() {
 			event.preventDefault();
 			userData.signUp(data);
 			handleClose();
+		} catch (error) {
+			window.alert(error);
+		}
+	};
+
+	const openSignUp = (event) => {
+		try {
+			event.preventDefault();
+			setsigingUp(true);
 		} catch (error) {
 			window.alert(error);
 		}
@@ -76,52 +89,88 @@ function BtnSign() {
 						Close
 					</Button>
 				</Modal.Header>
-				<Modal.Body>
-					<div className="form-group m-2">
-						<label>Username</label>
-						<input
-							onChange={handleChange}
-							name="username"
-							type="text"
-							className="form-control"
-							placeholder="Enter Your Username"
-						/>
-					</div>
-					<div className="form-group m-2">
-						<label for="exampleInputEmail1">Email address</label>
-						<input
-							onChange={handleChange}
-							name="email"
-							type="email"
-							className="form-control"
-							id="exampleInputEmail1"
-							aria-describedby="emailHelp"
-							placeholder="Enter Your email"
-						/>
-						<small id="emailHelp" className="form-text text-muted">
-							We'll never share your email with anyone else.
-						</small>
-					</div>
-					<div className="form-group m-2">
-						<label for="exampleInputPassword1">Password</label>
-						<input
-							onChange={handleChange}
-							name="password"
-							type="password"
-							className="form-control"
-							id="exampleInputPassword1"
-							placeholder="Password"
-						/>
-					</div>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="secondary" onClick={handleSignUp}>
-						Create New Account
-					</Button>
-					<Button type="submit" variant="success" onClick={handleSignIn}>
-						Log In
-					</Button>
-				</Modal.Footer>
+
+				{sigingUp === false ? (
+					<Modal.Body>
+						<div className="form-group m-2">
+							<label>Username</label>
+							<input
+								onChange={handleChange}
+								name="username"
+								type="text"
+								className="form-control"
+								placeholder="Enter Your Username"
+							/>
+						</div>
+						<div className="form-group m-2">
+							<label for="exampleInputPassword1">Password</label>
+							<input
+								onChange={handleChange}
+								name="password"
+								type="password"
+								className="form-control"
+								id="exampleInputPassword1"
+								placeholder="Password"
+							/>
+						</div>
+					</Modal.Body>
+				) : (
+					<Modal.Body>
+						<div className="form-group m-2">
+							<label>Username</label>
+							<input
+								onChange={handleChange}
+								name="username"
+								type="text"
+								className="form-control"
+								placeholder="Enter Your Username"
+							/>
+						</div>
+						<div className="form-group m-2">
+							<label for="exampleInputEmail1">Email address</label>
+							<input
+								onChange={handleChange}
+								name="email"
+								type="email"
+								className="form-control"
+								id="exampleInputEmail1"
+								aria-describedby="emailHelp"
+								placeholder="Enter Your email"
+							/>
+							<small id="emailHelp" className="form-text text-muted">
+								We'll never share your email with anyone else.
+							</small>
+						</div>
+						<div className="form-group m-2">
+							<label for="exampleInputPassword1">Password</label>
+							<input
+								onChange={handleChange}
+								name="password"
+								type="password"
+								className="form-control"
+								id="exampleInputPassword1"
+								placeholder="Password"
+							/>
+						</div>
+					</Modal.Body>
+				)}
+
+				{sigingUp === false ? (
+					<Modal.Footer onSubmit={handleSignIn}>
+						<Button variant="secondary" onClick={openSignUp}>
+							Create New Account
+						</Button>
+						<Button type="submit" variant="success" onClick={handleSignIn}>
+							Log In
+						</Button>
+					</Modal.Footer>
+				) : (
+					<Modal.Footer>
+						<Button variant="secondary" onClick={handleSignUp}>
+							Sign Up
+						</Button>
+					</Modal.Footer>
+				)}
 			</Modal>
 		</>
 	);
