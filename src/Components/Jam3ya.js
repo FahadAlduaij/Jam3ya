@@ -1,10 +1,12 @@
 import React from "react";
-// import Moment from 'react-moment'
+import Moment from "react-moment";
 import { observer } from "mobx-react";
 import { Card, Button } from "react-bootstrap";
 
 function Jam3ya(props) {
 	// const jam3yaSlug = usePrams().jam3yaSlug
+	const startDateJam3ya = new Date(props.startDate);
+	const endDateJam3ya = new Date(props.endDate);
 
 	return (
 		<div className="card-container">
@@ -15,9 +17,10 @@ function Jam3ya(props) {
 					<Card.Text>Amount: {props.amount}</Card.Text>
 					<Card.Text>Limit: {props.limit}</Card.Text>
 					<Card.Text>Start Date:</Card.Text>
-					<Card.Text>{props.startDate}</Card.Text>
+					<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
 					<Card.Text>End Date:</Card.Text>
-					<Card.Text>{props.endDate}</Card.Text>
+					<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
+					<br />
 					<Button variant="success">Go somewhere</Button>
 				</Card.Body>
 			</Card>

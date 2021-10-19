@@ -10,16 +10,13 @@ function CreateJam3ya() {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-	const [startDate, setStartDate] = useState(new Date());
-	const [endDate, setEndDate] = useState(new Date());
-
 	const [data, setData] = useState({
 		title: "",
 		image: "",
 		amount: 0,
 		limit: 0,
-		startDate: startDate,
-		endDate: endDate,
+		startDate: Date.now(),
+		endDate: Date.now(),
 	});
 
 	const handleChange = (event) => {
@@ -103,16 +100,9 @@ function CreateJam3ya() {
 						<DatePicker
 							name="startDate"
 							id="startDateInput"
-							selected={startDate}
-							onChange={(date) => setStartDate(date)}
+							selected={data.startDate}
+							onChange={(date) => setData({ ...data, startDate: date })}
 						/>
-						{/* <input
-							onChange={handleChange}
-							name="startDate"
-							className="form-control"
-							id="exampleInputPassword1"
-							placeholder="Enter Limit"
-						/> */}
 					</div>
 
 					<div className="form-group m-2">
@@ -120,18 +110,10 @@ function CreateJam3ya() {
 						<DatePicker
 							name="endDate"
 							id="endDateInput"
-							selected={endDate}
-							onChange={(date) => setEndDate(date)}
+							selected={data.endDate}
+							onChange={(date) => setData({ ...data, endDate: date })}
 						/>
-						{/* <input
-							onChange={handleChange}
-							name="endDate"
-							className="form-control"
-							id="exampleInputPassword1"
-							placeholder="Enter Limit"
-						/> */}
 					</div>
-					
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="success" onClick={handleCreate}>

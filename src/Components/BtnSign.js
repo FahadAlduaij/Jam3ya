@@ -3,6 +3,7 @@ import { Modal, Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import userData from "../Stores/User";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
 
 function BtnSign() {
 	const [sigingUp, setsigingUp] = useState(false);
@@ -71,7 +72,7 @@ function BtnSign() {
 			) : (
 				<div className="welcome-text">
 					<Button variant="light" as="button" onClick={handleShow}>
-						Sign In
+						SignIn/SignUp
 					</Button>
 				</div>
 			)}
@@ -181,4 +182,4 @@ function BtnSign() {
 	);
 }
 
-export default BtnSign;
+export default observer(BtnSign);
