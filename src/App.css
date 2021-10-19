@@ -17,7 +17,6 @@ body {
 }
 
 .header-text {
-	font-family: "Courier New";
 	font-size: 7rem;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	width: 40%;
@@ -25,7 +24,7 @@ body {
 }
 .signin {
 	position: absolute;
-	left: 90%;
+	left: 80%;
 }
 
 .welcome-text {
@@ -35,9 +34,10 @@ body {
 	align-items: center;
 	text-align: center;
 	color: white;
+	width: 300px;
 }
 
-.welcome-text p {
+.welcome-text Button {
 	margin: 0 10px 0 10px;
 }
 
@@ -50,9 +50,14 @@ body {
 }
 
 .card-header {
-	height: 150px;
+	height: 200px;
 	margin: 10px;
 }
+
+.search-bar {
+	width: 30vw;
+}
+
 .card-container {
 	/* display: inline-block; */
 	margin: 20px;
@@ -78,7 +83,7 @@ body {
 
 .my-font {
 	text-align: center;
-	font-family: "Courier New";
+	/* font-family: "Courier New"; */
 	font-weight: bold;
 	margin: auto;
 	color: rgb(40, 49, 54);

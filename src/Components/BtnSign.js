@@ -70,9 +70,13 @@ function BtnSign() {
 					</Button>
 				</div>
 			) : (
-				<div className="welcome-text">
-					<Button variant="light" as="button" onClick={handleShow}>
-						SignIn/SignUp
+				<div className=" welcome-text">
+					<Button variant="success" as="button" onClick={handleShow}>
+						Sign In
+					</Button>
+
+					<Button variant="secondary" as="button" onClick={handleShow}>
+						Sign Up
 					</Button>
 				</div>
 			)}

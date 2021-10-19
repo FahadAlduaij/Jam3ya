@@ -3,27 +3,35 @@ import Jam3ya from "./Jam3ya";
 import jam3yaStore from "../Stores/Jam3yaStore";
 import { observer } from "mobx-react";
 import CreateJam3ya from "./CreateJam3ya";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 function Jam3yaList() {
-  const array = jam3yaStore.jam3yat.map((jam3ya) => (
-    <Jam3ya
-      title={jam3ya.title}
-      image={jam3ya.image}
-      amount={jam3ya.amount}
-      limit={jam3ya.limit}
-      startDate={jam3ya.startDate}
-      endDate={jam3ya.endDate}
-    />
-  ));
+	const array = jam3yaStore.jam3yat.map((jam3ya) => (
+		<Jam3ya
+			title={jam3ya.title}
+			image={jam3ya.image}
+			amount={jam3ya.amount}
+			limit={jam3ya.limit}
+			startDate={jam3ya.startDate}
+			endDate={jam3ya.endDate}
+		/>
+	));
 
-  return (
-    <div className="card-header my-font">
-      <center className="m-5">
-        <CreateJam3ya />
-      </center>
-      <div className="cards-container">{array}</div>
-    </div>
-  );
+	return (
+		<div className="card-header my-font">
+			<center className="m-5">
+				<div className='search-bar'>
+					<InputGroup className="mb-3">
+						<Button variant="secondary">Search</Button>
+						<FormControl aria-label="Default" placeholder='Enter Title' />
+					</InputGroup>
+				</div>
+				<br />
+				<CreateJam3ya />
+			</center>
+			<div className="cards-container">{array}</div>
+		</div>
+	);
 }
 
 export default observer(Jam3yaList);

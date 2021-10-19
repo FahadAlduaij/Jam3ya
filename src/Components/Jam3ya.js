@@ -13,14 +13,30 @@ function Jam3ya(props) {
 			<Card style={{ width: "18rem" }}>
 				<Card.Img className="image-container" variant="top" src={props.image} />
 				<Card.Body>
-					<Card.Title>Title: {props.title}</Card.Title>
-					<Card.Text>Amount: {props.amount}</Card.Text>
-					<Card.Text>Limit: {props.limit}</Card.Text>
-					<Card.Text>Start Date:</Card.Text>
-					<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
-					<Card.Text>End Date:</Card.Text>
-					<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
+					<Card.Title>
+						<strong>Title: </strong>
+						{props.title}
+					</Card.Title>
+
+					<Card.Text>
+						<strong>Amount: </strong> {props.amount}
+					</Card.Text>
+					<Card.Text>
+						<strong>Limit: </strong> {props.limit}
+					</Card.Text>
+
+					<Card.Text>
+						<strong>Start Date: </strong>
+						<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
+					</Card.Text>
+
+					<Card.Text>
+						<strong>End Date: </strong>
+						<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
+					</Card.Text>
+
 					<br />
+
 					<Button variant="success">Go somewhere</Button>
 				</Card.Body>
 			</Card>
