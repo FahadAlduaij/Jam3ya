@@ -6,13 +6,22 @@ import CreateJam3ya from "./CreateJam3ya";
 
 function Jam3yaList() {
 	const array = jam3yaStore.jam3yat.map((jam3ya) => (
-		<Jam3ya title={jam3ya.title} image={jam3ya.image} amount={jam3ya.amount} limit={jam3ya.limit} startDate={jam3ya.startDate} endDate={jam3ya.endDate} />
+		<Jam3ya
+			title={jam3ya.title}
+			image={jam3ya.image}
+			amount={jam3ya.amount}
+			limit={jam3ya.limit}
+			startDate={jam3ya.startDate}
+			endDate={jam3ya.endDate}
+		/>
 	));
 
 	return (
-		<div>
-            <CreateJam3ya />
-			{array}
+		<div className="card-header">
+			<center className="m-5">
+				<CreateJam3ya />
+			</center>
+			<div className="card-container">{array}</div>
 		</div>
 	);
 }

@@ -19,7 +19,6 @@ class Jam3yaStore {
 		try {
 			const response = await api.post("/jam3ya", jam3yaData);
 			this.jam3yat.push(response.data);
-			console.log(response.data);
 		} catch (error) {
 			console.log(error);
 		}

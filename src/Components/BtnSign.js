@@ -1,7 +1,8 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import userData from "../Stores/User";
+import { Link } from "react-router-dom";
 
 function BtnSign() {
 	const [show, setShow] = useState(false);
@@ -29,28 +30,37 @@ function BtnSign() {
 	};
 
 	const handleSignIn = (event) => {
-		event.preventDefault();
-		userData.signIn(data);
-		handleClose();
+		try {
+			event.preventDefault();
+			userData.signIn(data);
+			handleClose();
+		} catch (error) {
+			window.alert(error);
+		}
 	};
 
 	const handleLogout = () => {
-		userData.logOut();
+		try {
+			userData.logOut();
+		} catch (error) {
+			window.alert(error);
+		}
 	};
 
 	return (
 		<>
 			{userData.user ? (
 				<div className="welcome-text">
-					<p>Hello {userData.user.username}</p>
-					<Button variant="primary" onClick={handleLogout}>
-						LogOut
+					<Button variant="danger" as="button" onClick={handleLogout}>
+						Sign Out
 					</Button>
 				</div>
 			) : (
-				<Button variant="primary" onClick={handleShow}>
-					Sign In
-				</Button>
+				<div className="welcome-text">
+					<Button variant="light" as="button" onClick={handleShow}>
+						Sign In
+					</Button>
+				</div>
 			)}
 
 			<Modal show={show} onHide={handleClose}>
@@ -68,13 +78,12 @@ function BtnSign() {
 				</Modal.Header>
 				<Modal.Body>
 					<div className="form-group m-2">
-						<label for="exampleInputEmail1">Username</label>
+						<label>Username</label>
 						<input
 							onChange={handleChange}
 							name="username"
 							type="text"
-							className="form-control "
-							id="exampleInputEmail1"
+							className="form-control"
 							placeholder="Enter Your Username"
 						/>
 					</div>
@@ -107,14 +116,10 @@ function BtnSign() {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleSignUp}>
-						Sign Up
+						Create New Account
 					</Button>
-					<Button
-						type="submit"
-						className="btn btn-primary"
-						onClick={handleSignIn}
-					>
-						Sign In
+					<Button type="submit" variant="success" onClick={handleSignIn}>
+						Log In
 					</Button>
 				</Modal.Footer>
 			</Modal>

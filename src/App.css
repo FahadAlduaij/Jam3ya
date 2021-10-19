@@ -3,14 +3,20 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 	height: 100vh;
 	width: 100vw;
 }
 
 .header-text {
-	font-size: 5rem;
+	font-size: 7rem;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	width: 40%;
 	color: white;
+}
+.signin {
+	position: absolute;
+	left: 90%;
 }
 
 .welcome-text {
@@ -19,7 +25,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-
 	color: white;
 }
 
@@ -27,4 +32,15 @@ body {
 	margin: 0 10px 0 10px;
 }
 
+.card-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 30px 20px;
+}
 
+.card-header {
+	height: 150px;
+	margin-bottom: 10px;
+}

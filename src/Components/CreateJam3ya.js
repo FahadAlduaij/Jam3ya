@@ -18,8 +18,8 @@ function CreateJam3ya() {
 		image: "",
 		amount: 0,
 		limit: 0,
-		startDate: "",
-		endDate: "",
+		startDate: startDate,
+		endDate: endDate,
 	});
 
 	const handleChange = (event) => {
@@ -33,7 +33,7 @@ function CreateJam3ya() {
 
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow}>
+			<Button variant="success" size="lg" onClick={handleShow}>
 				Create New Jam3ya
 			</Button>
 
@@ -45,62 +45,65 @@ function CreateJam3ya() {
 						height="50"
 						alt=""
 					/>
-					<Modal.Title>Create Jam3ya</Modal.Title>
+					<Modal.Title>Create New Jam3ya</Modal.Title>
 					<Button variant="danger" onClick={handleClose}>
 						Close
 					</Button>
 				</Modal.Header>
 				<Modal.Body>
 					<div className="form-group m-2">
-						<label for="exampleInputEmail1">Title </label>
+						<label for="titleInput">Title</label>
 						<input
 							onChange={handleChange}
-							name="title "
+							name="title"
+							id="titleInput"
 							type="text"
-							className="form-control "
-							id="exampleInputEmail1"
+							className="form-control"
 							placeholder="Enter The Title"
 						/>
 					</div>
+
 					<div className="form-group m-2">
-						<label for="exampleInputEmail1">Image </label>
+						<label for="imageInput">Image</label>
 						<input
 							onChange={handleChange}
-							name="image "
-							type="email"
+							name="image"
+							id="imageInput"
+							type="text"
 							className="form-control"
-							id="exampleInputEmail1"
-							aria-describedby="emailHelp"
 							placeholder="Enter Image URL"
 						/>
 					</div>
+
 					<div className="form-group m-2">
-						<label for="exampleInputPassword1">Amount </label>
+						<label for="amountInput">Amount</label>
 						<input
 							onChange={handleChange}
 							name="amount"
 							type="number"
 							className="form-control"
-							id="exampleInputPassword1"
+							id="amountInput"
 							placeholder="Enter Amount"
 						/>
 					</div>
 					<div className="form-group m-2">
-						<label for="exampleInputPassword1">Limit </label>
+						<label for="limitInput">Limit</label>
 						<input
 							onChange={handleChange}
 							name="limit"
+							id="limitInput"
 							type="number"
 							className="form-control"
-							id="exampleInputPassword1"
 							placeholder="Enter Limit"
 						/>
 					</div>
+
 					<div className="form-group m-2">
-						<label for="exampleInputPassword1">StartDate </label>
+						<label for="startDateInput">StartDate </label>
 						<DatePicker
-							selected={startDate}
 							name="startDate"
+							id="startDateInput"
+							selected={startDate}
 							onChange={(date) => setStartDate(date)}
 						/>
 						{/* <input
@@ -111,10 +114,12 @@ function CreateJam3ya() {
 							placeholder="Enter Limit"
 						/> */}
 					</div>
+
 					<div className="form-group m-2">
-						<label for="exampleInputPassword1">EndDate </label>
+						<label for="endDateInput">EndDate </label>
 						<DatePicker
 							name="endDate"
+							id="endDateInput"
 							selected={endDate}
 							onChange={(date) => setEndDate(date)}
 						/>
@@ -126,9 +131,10 @@ function CreateJam3ya() {
 							placeholder="Enter Limit"
 						/> */}
 					</div>
+					
 				</Modal.Body>
 				<Modal.Footer>
-					<Button className="btn btn-primary" onClick={handleCreate}>
+					<Button variant="success" onClick={handleCreate}>
 						Create
 					</Button>
 				</Modal.Footer>
