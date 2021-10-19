@@ -6,24 +6,15 @@ import CreateJam3ya from "./CreateJam3ya";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 function Jam3yaList() {
-	const array = jam3yaStore.jam3yat.map((jam3ya) => (
-		<Jam3ya
-			title={jam3ya.title}
-			image={jam3ya.image}
-			amount={jam3ya.amount}
-			limit={jam3ya.limit}
-			startDate={jam3ya.startDate}
-			endDate={jam3ya.endDate}
-		/>
-	));
+	const array = jam3yaStore.jam3yat.map((jam3ya) => <Jam3ya jam3ya={jam3ya} />);
 
 	return (
-		<div className="card-header my-font">
+		<div className=" my-font">
 			<center className="m-5">
-				<div className='search-bar'>
+				<div className="search-bar">
 					<InputGroup className="mb-3">
 						<Button variant="secondary">Search</Button>
-						<FormControl aria-label="Default" placeholder='Enter Title' />
+						<FormControl aria-label="Default" placeholder="Enter Title" />
 					</InputGroup>
 				</div>
 				<br />

@@ -1,28 +1,33 @@
 import React from "react";
 import Moment from "react-moment";
 import { observer } from "mobx-react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import Jam3yaDetail from "./Jam3yaDetail";
 
 function Jam3ya(props) {
 	// const jam3yaSlug = usePrams().jam3yaSlug
-	const startDateJam3ya = new Date(props.startDate);
-	const endDateJam3ya = new Date(props.endDate);
+	const startDateJam3ya = new Date(props.jam3ya.startDate);
+	const endDateJam3ya = new Date(props.jam3ya.endDate);
 
 	return (
 		<div className="card-container">
 			<Card style={{ width: "18rem" }}>
-				<Card.Img className="image-container" variant="top" src={props.image} />
+				<Card.Img
+					className="image-container"
+					variant="top"
+					src={props.jam3ya.image}
+				/>
 				<Card.Body>
 					<Card.Title>
 						<strong>Title: </strong>
-						{props.title}
+						{props.jam3ya.title}
 					</Card.Title>
 
 					<Card.Text>
-						<strong>Amount: </strong> {props.amount}
+						<strong>Amount: </strong> {props.jam3ya.amount} KD
 					</Card.Text>
 					<Card.Text>
-						<strong>Limit: </strong> {props.limit}
+						<strong>Limit: </strong> {props.jam3ya.limit} 
 					</Card.Text>
 
 					<Card.Text>
@@ -32,12 +37,13 @@ function Jam3ya(props) {
 
 					<Card.Text>
 						<strong>End Date: </strong>
-						<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
+						<Moment format="YYYY/MM/DD" date={endDateJam3ya} />
 					</Card.Text>
 
 					<br />
-
-					<Button variant="success">Go somewhere</Button>
+					<Card.Body>
+						<Jam3yaDetail jam3ya={props.jam3ya} />
+					</Card.Body>
 				</Card.Body>
 			</Card>
 		</div>
