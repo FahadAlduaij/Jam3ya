@@ -26,6 +26,7 @@ body {
 	width: 100%;
 	font-size: 5rem;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	letter-spacing: 5px;
 	color: rgba(255, 255, 255, 0.856);
 }
 
@@ -37,6 +38,15 @@ body {
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: rgba(255, 255, 255, 0.856);
 }
+
+.button-container{
+	width: 100%;
+}
+.button-header{
+	width: 15% !important;
+}
+
+
 .signin {
 	position: absolute;
 	left: 80%;
@@ -134,6 +144,12 @@ body {
 	}
 }
 
+.jam3ya-detail-container {
+	width: 50vw !important;
+	height: 50vh !important;
+	max-height: 50vh !important;
+	max-width: 50vw !important;
+}
 .modal-header {
 	background: linear-gradient(-45deg, #686592ad, #484d9c, #5f9ee6, #080c1f);
 	background-size: 400% 400%;
@@ -142,22 +158,7 @@ body {
 }
 .footer-users {
 	justify-content: center !important;
-	/* background-color: rgba(0, 0, 0, 0.37); */
-	background: linear-gradient(
-		-45deg,
-		#0a6cff69,
-		#c8cbff8e,
-		#86bcfa9a,
-		#4060ffa2
-	);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	border-radius: 10px;
-	margin-right: 15px;
-	margin-left: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 10px;
+	margin: 15px;
 }
 .footer-buttons {
 	/* margin-right: 5px;
@@ -166,9 +167,7 @@ body {
 }
 .image-fit {
 	text-align: center;
-	width: 400px;
-	height: 300px;
-
+	width: 100%;
 }
 
 .detail-btn {
@@ -184,46 +183,5 @@ body {
 	/* background-color: teal; Ashwag */
 }
 
-/* animated button*/
-a.animated-button.thar-four {
-	color: #fff;
-	cursor: pointer;
-	display: block;
-	position: relative;
-	border: 3px solid #2468e7;
-	/* #f7ca18 */
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-	height: 50px;
-	width: 300px;
-	border-radius: 25px;
-	margin-top: 100px;
-}
-a.animated-button.thar-four:hover {
-	color: rgb(52, 11, 187) !important;
-	background-color: transparent;
-	text-shadow: nfour;
-	border-radius: 25px;
-}
-a.animated-button.thar-four:hover:before {
-	right: 0%;
-	left: auto;
-	width: 100%;
-	border-radius: 25px;
-}
-a.animated-button.thar-four:before {
-	display: block;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 0px;
-	z-index: -1;
-	content: "";
-	color: #000 !important;
-	/* background: #f7ca18; */
-	background: #ffffff;
 
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-	border-radius: 25px;
-}
 

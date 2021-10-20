@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header";
 import Jam3yaList from "./Components/Jam3yaList";
+import ButtonHeader from "./Components/ButtonHeader";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -31,15 +32,8 @@ function App() {
 						</h1>
 						<p>Join Jam3ya Now To Start Earing Profit.</p>
 
-						<div className="header-txt " class="row">
-							<div class="col-md-8 col-sm-8 col-xs-6">
-								<a
-									href="/jam3ya"
-									class="btn btn-sm animated-button thar-four header-txt"
-								>
-									Join Jam3ya Now!
-								</a>
-							</div>
+						<div className='button-container'>
+							<ButtonHeader />
 						</div>
 					</div>
 				</Route>

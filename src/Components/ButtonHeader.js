@@ -1,0 +1,14 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+function ButtonHeader() {
+    return (
+        <Link to='/Jam3ya'>
+        <div >
+            <button  className='btn btn-outline-light btn-lg btn-block button-header'>Join Now!</button>
+        </div>
+        </Link>
+    )
+}
+
+export default ButtonHeader

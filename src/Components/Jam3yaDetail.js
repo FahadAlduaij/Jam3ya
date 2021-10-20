@@ -17,6 +17,8 @@ function Jam3yaDetail(props) {
 		.map((user) => user.username)
 		.join(" - ");
 
+	const numberOfUsers = props.jam3ya.users.length + 1;
+
 	const [joined, setJoined] = useState("Join");
 	const [joinedStatus, setjoinedStatus] = useState(false);
 	const [color, setColor] = useState("primary");
@@ -43,7 +45,7 @@ function Jam3yaDetail(props) {
 	};
 
 	return (
-		<>
+		<div>
 			<Button
 				className="detail-btn"
 				variant="outline-primary"
@@ -57,20 +59,17 @@ function Jam3yaDetail(props) {
 			<Modal
 				show={show}
 				onHide={() => setShow(false)}
-				dialogClassName="modal-90w"
-				aria-labelledby="example-custom-modal-styling-title"
+				dialogClassName="jam3ya-detail-container"
 			>
 				<Modal.Header>
 					<img
-          className='detail-image'
+						className="detail-image"
 						src="https://cdn-icons-png.flaticon.com/512/3135/3135679.png"
 						width="50"
 						height="50"
 						alt=""
 					/>
-					<Modal.Title id="example-custom-modal-styling-title">
-						Jam3ya Details
-					</Modal.Title>
+					<Modal.Title>Jam3ya Details</Modal.Title>
 
 					<Button variant="outline-danger" onClick={handleClose}>
 						Close
@@ -78,28 +77,24 @@ function Jam3yaDetail(props) {
 				</Modal.Header>
 
 				<Modal.Body>
-					<Modal.Body>
-						<center>
-							<div>
-								<p>
-									<strong>Admin: </strong>
-									{props.jam3ya.author.username}
-								</p>
-							</div>
-						</center>
-					</Modal.Body>
-
+					<div>
+						<p>
+							<strong>Author: </strong>
+							<br />
+							{props.jam3ya.author.username}
+						</p>
+					</div>
+					
 					<center>
 						<div className="container">
 							<img className="image-fit" src={props.jam3ya.image} />
 						</div>
 					</center>
 					<br />
-
-					<div>
-						<h5>Title:</h5>
+					<Modal.Title>
+						Title:
 						<h6> {props.jam3ya.title}</h6>
-					</div>
+					</Modal.Title>
 					<br />
 
 					<div>
@@ -112,25 +107,24 @@ function Jam3yaDetail(props) {
 						<p>{props.jam3ya.limit}</p>
 					</div>
 
-					<div className='detail-date'> 
+					<div className="detail-date">
 						<h6>Start Date: :</h6>
 						<p>
 							<Moment format="YYYY/MM/DD" date={startDateJam3ya} />
 						</p>
-          
+
 						<h6> End Date:</h6>
 						<p>
 							<Moment format="YYYY/MM/DD" date={endDateJam3ya} />
 						</p>
 					</div>
-				
 				</Modal.Body>
 
 				<center>
 					<div>
 						<h5>
 							{/* <strong>Users: </strong> */}
-							Users:
+							{`Number of Users: ${numberOfUsers}`}
 						</h5>
 					</div>
 					<div className="footer-users">
@@ -164,7 +158,7 @@ function Jam3yaDetail(props) {
 					</Button>
 				</Modal.Footer>
 			</Modal>
-		</>
+		</div>
 	);
 }
 
