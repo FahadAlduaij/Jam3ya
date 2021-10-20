@@ -1,216 +1,228 @@
 body {
-	/* background-image: url("http://www.pngmagic.com/product_images/website-background-image-size-psd-vector-photo.jpg");
+  /* background-image: url("http://www.pngmagic.com/product_images/website-background-image-size-psd-vector-photo.jpg");
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
   width: 100vw; */
-	/* 
+  /* 
   -webkit-transform: perspective(500px);
   -webkit-transform-style: preserve-3d; */
-	height: 100vh;
-	width: 100vw;
-	background: linear-gradient(-45deg, #2d2c3a, #484d9c, #0d2977, #080c1f);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(-45deg, #2d2c3a, #484d9c, #0d2977, #080c1f);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 .header-text {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-	width: 100%;
-	font-size: 7rem;
-	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	color: rgba(255, 255, 255, 0.856);
+  width: 100%;
+  font-size: 7rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgba(255, 255, 255, 0.856);
 }
+
 .header-txt {
-	justify-self: center;
-	align-self: center;
-	width: 60%;
-	font-size: 7rem;
-	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	color: rgba(255, 255, 255, 0.856);
+  justify-self: center;
+  align-self: center;
+  width: 60%;
+  font-size: 1.4rem !important;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgba(255, 255, 255, 0.856);
 }
 .signin {
-	position: absolute;
-	left: 80%;
+  position: absolute;
+  left: 80%;
 }
 
 .welcome-text {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: white;
-	width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  width: 300px;
 }
 
 .welcome-text Button {
-	margin: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
 }
 
 .cards-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin: 30px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 20px;
 }
 
 .card-header {
-	height: 200px;
-	margin: 10px;
+  height: 200px;
+  margin: 10px;
 }
 
 .search-bar {
-	width: 30vw;
+  width: 30vw;
 }
 
 .card-container {
-	/* display: inline-block; */
+  /* display: inline-block; */
 
-	margin: 20px;
-	margin-top: 30px;
-	border-radius: 10px;
-	background-color: rgb(255, 255, 255);
-	overflow: hidden;
-	box-shadow: 0px 0px 10px 5px;
-	transition: 0.3s;
-	animation: ease-in-out;
+  margin: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 5px;
+  transition: 0.3s;
+  animation: ease-in-out;
 }
 
 .card-container:hover {
-	transform: scale(1.1);
-	box-shadow: 0px 0px 10px 5px;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 5px;
 }
 .card-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .image-container {
-	overflow: hidden;
-	height: 200px;
-	width: 100px;
+  overflow: hidden;
+  height: 200px;
+  width: 100px;
 }
 
 .my-font {
-	text-align: center;
-	/* font-family: "Courier New"; */
-	font-weight: bold;
-	margin: auto;
-	color: rgb(40, 49, 54);
+  text-align: center;
+  /* font-family: "Courier New"; */
+  font-weight: bold;
+  margin: auto;
+  color: rgb(40, 49, 54);
 }
 
 .coin {
-	background-image: url("https://api.teeplus.co/media/small_f2b0f997c10a28c15271da8719d1b7d270.webp");
-	background-size: 100% 100%;
-	border-radius: 100%;
-	height: 130px;
-	margin: 50px auto;
-	position: relative;
-	width: 100px;
-	-webkit-transition: 2s linear;
-	-webkit-transform-style: preserve-3d;
+  background-image: url("https://api.teeplus.co/media/small_f2b0f997c10a28c15271da8719d1b7d270.webp");
+  background-size: 100% 100%;
+  border-radius: 100%;
+  height: 130px;
+  margin: 50px auto;
+  position: relative;
+  width: 100px;
+  -webkit-transition: 2s linear;
+  -webkit-transform-style: preserve-3d;
 }
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .modal-header {
-	background: linear-gradient(-45deg, #686592ad, #484d9c, #5f9ee6, #080c1f);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	color: white;
+  background: linear-gradient(-45deg, #686592ad, #484d9c, #5f9ee6, #080c1f);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: white;
 }
 .footer-users {
-	justify-content: center !important;
-	/* background-color: rgba(0, 0, 0, 0.37); */
-	background: linear-gradient(
-		-45deg,
-		#0a6cff69,
-		#c8cbff8e,
-		#86bcfa9a,
-		#4060ffa2
-	);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	border-radius: 10px;
-	margin-right: 15px;
-	margin-left: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 10px;
+  justify-content: center !important;
+  /* background-color: rgba(0, 0, 0, 0.37); */
+  background: linear-gradient(
+    -45deg,
+    #0a6cff69,
+    #c8cbff8e,
+    #86bcfa9a,
+    #4060ffa2
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border-radius: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 .footer-buttons {
-	/* margin-right: 5px;
+  /* margin-right: 5px;
   margin-left: 5px; */
-	justify-content: center !important;
+  justify-content: center !important;
 }
 .image-fit {
-	text-align: center;
-	width: 400px;
-	height: 300px;
-	margin-bottom: 10px;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  margin-bottom: 10px;
 }
 
 .detail-btn {
-	width: 100%;
-	align-self: center !important;
+  width: 100%;
+  align-self: center !important;
 }
 .join-btn {
-	width: 100%;
-	align-self: center !important;
+  width: 100%;
+  align-self: center !important;
 }
 
 .btn-create-jam3ya {
-	/* background-color: teal; Ashwag */
+  /* background-color: teal; Ashwag */
 }
 
 /* animated button*/
 a.animated-button.thar-four {
-	color: #fff;
-	cursor: pointer;
-	display: block;
-	position: relative;
-	border: 2px solid #f7ca18;
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 3px solid #2468e7;
+  /* #f7ca18 */
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  height: 50px;
+  width: 300px;
+  border-radius: 25px;
+  margin-top: 100px;
 }
 a.animated-button.thar-four:hover {
-	color: #000 !important;
-	background-color: transparent;
-	text-shadow: nfour;
+  color: rgb(255, 200, 47) !important;
+  background-color: transparent;
+  text-shadow: nfour;
+  border-radius: 25px;
 }
 a.animated-button.thar-four:hover:before {
-	right: 0%;
-	left: auto;
-	width: 100%;
+  right: 0%;
+  left: auto;
+  width: 100%;
+  border-radius: 25px;
 }
 a.animated-button.thar-four:before {
-	display: block;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	height: 100%;
-	width: 0px;
-	z-index: -1;
-	content: "";
-	color: #000 !important;
-	background: #f7ca18;
-	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: "";
+  color: #000 !important;
+  /* background: #f7ca18; */
+  background: #ffffff;
+
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  border-radius: 25px;
 }
