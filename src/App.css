@@ -17,9 +17,22 @@ body {
 }
 
 .header-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  text-align: center;
+	width: 100%;
 	font-size: 7rem;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	width: 40%;
+	color: rgba(255, 255, 255, 0.856);
+}
+.header-txt {
+	justify-self: center;
+	align-self: center;
+	width: 60%;
+	font-size: 7rem;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: rgba(255, 255, 255, 0.856);
 }
 .signin {
@@ -163,7 +176,6 @@ body {
 .join-btn {
 	width: 100%;
 	align-self: center !important;
-
 }
 
 .btn-create-jam3ya {
