@@ -33,7 +33,7 @@ function CreateJam3ya() {
     <>
       <Button
         className="btn-create-jam3ya"
-        variant="light"
+        variant="secondary"
         size="lg"
         onClick={handleShow}
       >
