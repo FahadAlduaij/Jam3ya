@@ -10,8 +10,6 @@ function Jam3ya(props) {
 	const startDateJam3ya = new Date(props.jam3ya.startDate);
 	const endDateJam3ya = new Date(props.jam3ya.endDate);
 
-	
-
 	return (
 		<div className="card-container">
 			<Card style={{ width: "18rem" }}>
