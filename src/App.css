@@ -39,32 +39,52 @@ body {
 	color: rgba(255, 255, 255, 0.856);
 }
 
-.button-container{
+.button-container {
 	width: 100%;
 }
-.button-header{
+.button-header {
 	width: 15% !important;
+	border: none !important;
+}
+.button-header:hover {
+	outline: none !important;
+	box-shadow: none !important;
+	background-color: rgb(190, 190, 190) !important;
+	transition: 0.2s;
 }
 
+.button-header:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
 
-.signin {
+/* .signin {
 	position: absolute;
 	left: 80%;
-}
-
-.welcome-text {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: white;
-	width: 300px;
-}
+} */
 
 .welcome-text Button {
 	margin: 0 10px 0 10px;
 }
+.btn-link {
+	text-decoration: none !important;
+	color: white !important;
+}
+.btn-link:hover {
+	text-decoration: none !important;
+	background-color: rgba(169, 169, 169, 0.52);
+	transition: 0.2s;
+}
+.btn-link:active {
+	outline: none !important;
+	background-color: rgba(206, 206, 206, 0.678);
+}
+.btn-link:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+
 
 .cards-container {
 	display: flex;
@@ -182,6 +202,3 @@ body {
 .btn-create-jam3ya {
 	/* background-color: teal; Ashwag */
 }
-
-
-

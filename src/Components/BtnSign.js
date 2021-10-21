@@ -64,27 +64,25 @@ function BtnSign() {
 	return (
 		<>
 			{userData.user ? (
-				<div className="welcome-text">
+				<div className="navbar-brand">
 					<Button variant="danger" as="button" onClick={handleLogout}>
 						Sign Out
 					</Button>
 				</div>
 			) : (
-				<div className=" welcome-text">
-					<Button variant="outline-light" as="button" onClick={handleShow}>
+				<div >
+					<button className=" btn  btn-link p-4 " onClick={handleShow}>
 						Sign In
-					</Button>
-
-					<Button
-						variant="outline-light"
-						as="button"
+					</button>
+					<button
+						className="btn  btn-link p-4"
 						onClick={() => {
 							setShow(true);
 							setsigingUp(true);
 						}}
 					>
 						Sign Up
-					</Button>
+					</button>
 				</div>
 			)}
 
