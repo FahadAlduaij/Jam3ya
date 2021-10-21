@@ -69,7 +69,7 @@ function Jam3yaDetail(props) {
 						height="50"
 						alt=""
 					/>
-					<Modal.Title>Jam3ya Details</Modal.Title>
+					<Modal.Title> Details</Modal.Title>
 
 					<Button variant="outline-danger" onClick={handleClose}>
 						Close
@@ -77,14 +77,6 @@ function Jam3yaDetail(props) {
 				</Modal.Header>
 
 				<Modal.Body>
-					<div>
-						<p>
-							<strong>Author: </strong>
-							<br />
-							{props.jam3ya.author.username}
-						</p>
-					</div>
-					
 					<center>
 						<div className="container">
 							<img className="image-fit" src={props.jam3ya.image} />
@@ -131,31 +123,37 @@ function Jam3yaDetail(props) {
 						<p>{jam3yaUsers} </p>
 					</div>
 				</center>
-				{/* <Modal.Footer className="footer-users">
-          <div>
-            <p>{jam3yaUsers} </p>
-          </div>
-        </Modal.Footer> */}
-				<Modal.Footer className="footer-buttons">
-					<Button
-						className="join-btn"
-						active
-						variant={color}
-						onClick={() => {
-							jam3yaStore.joinJam3ya(props.jam3ya._id);
-							changeJoin();
-							// handleClose();
-						}}
-					>
-						{joined}
-					</Button>
-					<br />
-					<Button onClick={handleDelete} type="submit" variant="warning">
-						Delete
-					</Button>
-					<Button onClick={handleLeave} type="submit" variant="warning">
-						Leave
-					</Button>
+				<div className="delete-leave-container">
+					<Modal.Footer className="footer-buttons">
+						<Button
+							className="join-btn"
+							active
+							variant={color}
+							onClick={() => {
+								jam3yaStore.joinJam3ya(props.jam3ya._id);
+								changeJoin();
+								// handleClose();
+							}}
+						>
+							{joined}
+						</Button>
+						<br />
+
+						<Button onClick={handleDelete} type="submit" variant="danger">
+							Delete
+						</Button>
+						<Button onClick={handleLeave} type="submit" variant="warning">
+							Leave
+						</Button>
+					</Modal.Footer>
+				</div>
+				<Modal.Footer>
+					<div>
+						<p>
+							<strong>Author: </strong>
+							{props.jam3ya.author.username}
+						</p>
+					</div>
 				</Modal.Footer>
 			</Modal>
 		</div>

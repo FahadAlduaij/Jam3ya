@@ -31,6 +31,7 @@ body {
 }
 
 .header-txt {
+	letter-spacing: 2px;
 	justify-self: center;
 	align-self: center;
 	width: 60%;
@@ -45,6 +46,8 @@ body {
 .button-header {
 	width: 15% !important;
 	border: none !important;
+	font-weight: bold ;
+	letter-spacing: 1px;
 }
 .button-header:hover {
 	outline: none !important;
@@ -83,8 +86,6 @@ body {
 	outline: none !important;
 	box-shadow: none !important;
 }
-
-
 
 .cards-container {
 	display: flex;
@@ -165,10 +166,18 @@ body {
 }
 
 .jam3ya-detail-container {
-	width: 50vw !important;
+	width: 30vw !important;
 	height: 50vh !important;
 	max-height: 50vh !important;
-	max-width: 50vw !important;
+	max-width: 30vw !important;
+}
+.image-fit {
+	text-align: center;
+	width: 50%;
+}
+.delete-leave-container {
+	display: flex;
+	justify-content: space-evenly !important;
 }
 .modal-header {
 	background: linear-gradient(-45deg, #686592ad, #484d9c, #5f9ee6, #080c1f);
@@ -184,10 +193,6 @@ body {
 	/* margin-right: 5px;
   margin-left: 5px; */
 	justify-content: center !important;
-}
-.image-fit {
-	text-align: center;
-	width: 100%;
 }
 
 .detail-btn {
