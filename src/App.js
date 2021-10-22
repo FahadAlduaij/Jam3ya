@@ -31,10 +31,10 @@ function App() {
 
 				<Route exact path="/">
 					<div className="header-text">
-						<h1 className="header-text">
+						<h1 className="">
 							How To Get More Money With 6 or More Months!
 						</h1>
-						<p>Join Jam3ya Now To Start Earing Profit.</p>
+						<p>Join Now to Start Earing Profit</p>
 
 						<div className="button-container">
 							<ButtonHeader />
