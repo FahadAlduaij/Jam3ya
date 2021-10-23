@@ -4,13 +4,54 @@
 	--text-header-color: #183642;
 }
 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 body {
 	height: 100vh;
 	width: 100vw;
-	background-image: url("https://images.unsplash.com/photo-1508739773434-c26b3d09e071?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+	min-width: 50vh;
+	background-image: url("https://images.unsplash.com/photo-1634334181759-a965220b6a91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1598&q=80");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+}
+.nav-bar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: var(--text-header-color) !important;
+	padding: 5px;
+	height: 50px;
+}
+.navbar-brand {
+	margin: 0 0 0 10px;
+}
+
+.btn-link {
+	text-decoration: none !important;
+	color: var(--white-color) !important;
+	width: 110px;
+}
+.btn-link:hover {
+	text-decoration: none !important;
+	background-color: #f2f4f325;
+	transition: 0.2s;
+}
+.btn-link:active {
+	outline: none !important;
+	background-color: #f2f4f346;
+}
+.btn-link:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.btn-right {
+	margin-left: auto !important;
 }
 
 .header-text {
@@ -19,8 +60,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	width: 100%;
-	height: 65vh;
+	width: 70%;
+	height: 58vh;
 	font-size: 5rem;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	letter-spacing: 5px;
@@ -38,7 +79,7 @@ body {
 }
 
 .button-container {
-	width: 50%;
+	width: 70%;
 }
 .button-header {
 	width: 15% !important;
@@ -68,23 +109,6 @@ body {
 
 .welcome-text Button {
 	margin: 0 10px 0 10px;
-}
-.btn-link {
-	text-decoration: none !important;
-	color: white !important;
-}
-.btn-link:hover {
-	text-decoration: none !important;
-	background-color: rgba(169, 169, 169, 0.52);
-	transition: 0.2s;
-}
-.btn-link:active {
-	outline: none !important;
-	background-color: rgba(206, 206, 206, 0.678);
-}
-.btn-link:focus {
-	outline: none !important;
-	box-shadow: none !important;
 }
 
 .cards-container {
@@ -169,10 +193,8 @@ body {
 	justify-content: space-evenly !important;
 }
 .modal-header {
-	background: linear-gradient(-45deg, #686592ad, #484d9c, #5f9ee6, #080c1f);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-	color: white;
+	background-color: var(--text-header-color);
+	color: var(--white-color);
 }
 .footer-users {
 	justify-content: center !important;
@@ -195,4 +217,23 @@ body {
 
 .btn-create-jam3ya {
 	/* background-color: teal; Ashwag */
+}
+
+.about-us {
+	height: 60vh;
+	width: 50vw;
+	margin: 80px;
+	font-size: 1.4rem;
+	color: var(--text-header-color) !important;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.logo-header-about-us {
+	display: flex;
+	flex-direction: row;
+	justify-content: center ;
+	align-items: flex-start;
 }

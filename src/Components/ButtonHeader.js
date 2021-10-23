@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 function ButtonHeader() {
     return (
-        <Link to='/Jam3ya'>
         <div >
-            <button  className='btn btn-light btn-lg btn-block button-header'>Join</button>
-        </div>
+            <Link to='/Jam3ya'>
+            <button  className='btn btn-light btn-lg btn-block button-header'>Join Now</button>
         </Link>
+        </div>
     )
 }
 

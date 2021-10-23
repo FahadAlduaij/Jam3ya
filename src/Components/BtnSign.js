@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import userData from "../Stores/User";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { observer } from "mobx-react";
 
 function BtnSign() {
@@ -65,17 +65,19 @@ function BtnSign() {
 		<>
 			{userData.user ? (
 				<div className="navbar-brand">
+					<Link to='/'> 
 					<Button variant="danger" as="button" onClick={handleLogout}>
 						Sign Out
 					</Button>
+					</Link>
 				</div>
 			) : (
-				<div >
-					<button className=" btn  btn-link p-4 " onClick={handleShow}>
+				<div>
+					<button className="btn btn-link" onClick={handleShow}>
 						Sign In
 					</button>
 					<button
-						className="btn  btn-link p-4"
+						className="btn btn-link"
 						onClick={() => {
 							setShow(true);
 							setsigingUp(true);
