@@ -148,21 +148,15 @@ class Jam3yaStore {
 				}
 			);
 		} else if (authorOfJam3ya !== userData.user._id) {
-			console.log(
-				"you can't delete cause you're not the author of this Jam3ya!"
-			);
-			toast.warn(
-				"you can't delete cause you're not the author of this Jam3ya!",
-				{
-					position: "top-center",
-					autoClose: this.seconds,
-					hideProgressBar: false,
-					closeOnClick: true,
-					pauseOnHover: true,
-					draggable: true,
-					progress: undefined,
-				}
-			);
+			toast.warn("You Are Not Authorized To Delete This Jam3ya", {
+				position: "top-center",
+				autoClose: this.seconds,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
 		} else {
 			try {
 				await api.delete(`/jam3ya/${jam3yaId}`);
@@ -187,6 +181,7 @@ class Jam3yaStore {
 		const currentJam3ya = this.jam3yat.find(
 			(jam3ya) => jam3ya._id === jam3yaId
 		);
+	
 
 		if (userData.user === null) {
 			this.joined = false;
