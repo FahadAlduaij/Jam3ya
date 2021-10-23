@@ -37,30 +37,39 @@ body {
 	text-decoration: none !important;
 	color: var(--white-color) !important;
 	width: 110px;
-}
-
-.sign-up{
-	background-color: var(--navbar-button-hover) !important;
-	margin-right: 5px;
-	margin-left: 5px;
-}
-.sign-up:active{
-	background-color: var(--navbar-button-active) !important;
-	margin-right: 5px;
+	color: #f2f4f3 !important;
 }
 
 .btn-link:hover {
 	text-decoration: none !important;
-	background-color: var(--navbar-button-hover);
+	/* background-color: var(--navbar-button-hover); */
+	color: #f2f4f3be !important ;
 	transition: 0.2s;
 }
+
 .btn-link:active {
 	outline: none !important;
-	background-color: var(--navbar-button-active);
+	/* background-color: var(--navbar-button-active); */
 }
+
 .btn-link:focus {
 	outline: none !important;
 	box-shadow: none !important;
+}
+
+.sign-up {
+	background-color: var(--navbar-button-hover) !important;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.sign-up:hover {
+	color: #f2f4f3 !important;
+}
+
+.sign-up:active {
+	background-color: var(--navbar-button-active) !important;
+	margin-right: 5px;
 }
 
 .btn-right {
@@ -247,6 +256,6 @@ body {
 .logo-header-about-us {
 	display: flex;
 	flex-direction: row;
-	justify-content: center ;
+	justify-content: center;
 	align-items: flex-start;
 }

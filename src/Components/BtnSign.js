@@ -77,7 +77,7 @@ function BtnSign() {
 						Sign In
 					</button>
 					<button
-						className="btn btn-link sign-up"
+						className="sign-up btn btn-link "
 						onClick={() => {
 							setShow(true);
 							setsigingUp(true);
