@@ -1,6 +1,8 @@
 :root {
 	--white-color: #f2f4f3;
 	--button-primary-color: #efa00b;
+	--navbar-button-hover: #f2f4f325;
+	--navbar-button-active: #f2f4f346;
 	--text-header-color: #183642;
 }
 
@@ -36,14 +38,25 @@ body {
 	color: var(--white-color) !important;
 	width: 110px;
 }
+
+.sign-up{
+	background-color: var(--navbar-button-hover) !important;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.sign-up:active{
+	background-color: var(--navbar-button-active) !important;
+	margin-right: 5px;
+}
+
 .btn-link:hover {
 	text-decoration: none !important;
-	background-color: #f2f4f325;
+	background-color: var(--navbar-button-hover);
 	transition: 0.2s;
 }
 .btn-link:active {
 	outline: none !important;
-	background-color: #f2f4f346;
+	background-color: var(--navbar-button-active);
 }
 .btn-link:focus {
 	outline: none !important;
