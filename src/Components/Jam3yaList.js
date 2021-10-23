@@ -14,10 +14,10 @@ function Jam3yaList() {
 		.map((jam3ya) => <Jam3ya jam3ya={jam3ya} />);
 
 	return (
-		<div className=" my-font">
-			<center className="m-5">
+		<div className="container-list">
+			<div className=" section">
 				<div className="search-bar">
-					<InputGroup className="mb-3">
+					<InputGroup className="mb-5">
 						<Button variant="secondary">Search</Button>
 						<FormControl
 							onChange={(event) => {
@@ -36,9 +36,10 @@ function Jam3yaList() {
 						<option>100</option>
 					</select> */}
 				</div>
-				<br />
+
 				<CreateJam3ya />
-			</center>
+			</div>
+			<br />
 			<div className="cards-container">{array}</div>
 		</div>
 	);

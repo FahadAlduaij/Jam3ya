@@ -11,13 +11,15 @@ function Jam3ya(props) {
 	const endDateJam3ya = new Date(props.jam3ya.endDate);
 
 	return (
-		<div className="card-container">
-			<Card style={{ width: "18rem" }}>
+		
+			<Card className="card-container" style={{ width: "20rem" }}>
 				<Card.Img
 					className="image-container"
 					variant="top"
 					src={props.jam3ya.image}
 				/>
+				<br />
+
 				<Card.Body>
 					<Card.Title>
 						<center>
@@ -25,7 +27,6 @@ function Jam3ya(props) {
 							{props.jam3ya.title}
 						</center>
 					</Card.Title>
-					<br />
 
 					<Card.Text>
 						<strong>Amount: </strong> {props.jam3ya.amount} KD
@@ -49,7 +50,7 @@ function Jam3ya(props) {
 					<Jam3yaDetail jam3ya={props.jam3ya} />
 				</Card.Body>
 			</Card>
-		</div>
+	
 	);
 }
 

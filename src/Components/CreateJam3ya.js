@@ -31,8 +31,8 @@ function CreateJam3ya() {
 
 	return (
 		<>
-			<button className="btn btn-light btn-lg btn-block button-header" onClick={handleShow}>
-				Create New Jam3ya
+			<button className="btn btn-light btn-lg btn-block button-create-new active-focus" onClick={handleShow}>
+				Create New
 			</button>
 
 			<Modal show={show} onHide={handleClose}>
