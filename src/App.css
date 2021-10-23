@@ -32,10 +32,6 @@ body {
 	background-attachment: fixed;
 }
 
-
-
-
-
 .nav-bar {
 	display: flex;
 	flex-direction: row;
@@ -92,10 +88,6 @@ body {
 	margin-left: auto !important;
 }
 
-
-
-
-
 .header-text {
 	display: flex;
 	flex-direction: column;
@@ -145,11 +137,11 @@ body {
 }
 
 .search-bar {
-	width: 18vw;
+	width: 20vw;
 }
 
 .button-create-new {
-	width: 15% !important;
+	width: 10% !important;
 	border: none !important;
 	background-color: var(--button-primary-color) !important;
 	color: var(--text-header-color) !important;
@@ -215,7 +207,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	
 }
 
 .image-container {
