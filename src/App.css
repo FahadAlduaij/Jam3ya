@@ -31,6 +31,11 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 }
+
+
+
+
+
 .nav-bar {
 	display: flex;
 	flex-direction: row;
@@ -87,6 +92,10 @@ body {
 	margin-left: auto !important;
 }
 
+
+
+
+
 .header-text {
 	display: flex;
 	flex-direction: column;
@@ -94,10 +103,10 @@ body {
 	align-items: center;
 	text-align: center;
 	width: 70%;
-	height: 58vh;
+	height: 70vh;
 	font-size: 5rem;
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-	letter-spacing: 5px;
+	letter-spacing: 3px;
 	color: var(--text-header-color);
 }
 
